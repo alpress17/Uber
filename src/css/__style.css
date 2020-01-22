@@ -1,0 +1,599 @@
+﻿* {
+    font-family: 'Roboto', sans-serif;
+}
+header {
+    position: relative; /* - для правильного позиционирования .subheader */
+    /* Fixed nav: */
+    position: sticky;
+    top: 0;
+    min-height: 2em;
+    z-index: 9999;
+   /*  _________________________________ */
+}
+nav {
+    height: 50px;
+    background-color: #212121;
+}
+.menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 13px 70px;
+    margin: 0;
+    list-style-type: none; /* убираем маркирование списка */
+}
+
+.menu .menu_link {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.menu .menu_item {
+    border-right: 2px dotted black;
+    padding-right: 28px;
+}
+
+.subheader {
+    position: absolute; /* при абсолютном пизиционировании,родителю дается - position: relative; */
+    width: 100%; /* задаем ширину блока в 100% от родителя (для корректного отображения при абсолютном позиционировании) */
+    height: 84px;
+    /* opacity: 0.6; */ /* параметр, вытянут с avacode, и "opacity" так же добавит прозрачность и другим вложенным елементам (кнопки,текст). поэтому его заменяем "background-color: rgba(0,0,0, .6)"*/
+    background-color: rgba(0, 0, 0, .6) /* .6 - это альфаканал = 60% прозрачности */
+}
+
+.subheader .subheader_logo {
+    display: block; /* т.к. логотип задан ссылкой(<a href="" class="subheader_logo">) а для ссылок отступы не работают, то делаем элемент блочным */
+    max-width: 100%; /* делается для того, чтобы при смене логотипа макс ширина его была не больше 100% от колонки */
+    margin-top: 16px;
+}
+
+.subheader .subheader_official {
+    margin-top: 6px;
+    opacity: 0.5;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 100;
+}
+
+.subheader .subheader_call {
+    margin-top: 19px;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 300;
+    text-align: right;
+}
+
+.subheader .subheader_phone { /* номер телефона задается ссылкой для того, чтобы по клику можно было сразу набрать телефон через подключенный мессенджер и + для оптимизации в гугле */ 
+    display: block;
+    margin-top: 8px;
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: right;
+    line-height: 12px;
+}
+
+.subheader .subheader_btn {
+    margin-top: 19px;
+    width: 172px;
+    height: 46px;
+    box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.12);
+    border:none;/* border: 3px solid rgba(0, 0, 0, 0.07); - как было*/
+    border-radius: 4px;/*  - скругление углов */
+
+    background-image: linear-gradient(to top, #1eacc7 0%, #4ce2ff 100%);
+    /* style for button text: */
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.21);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.promo{
+    min-height: 800px;
+    background: url('../img/bg.png') center center/cover no-repeat;
+    padding: 150px 0 135px 0;
+}
+
+.promo .promo_header {
+    color: #ffffff;
+    font-size: 36px;
+    text-transform: uppercase;
+    /* font-family: "Roboto - Black"; */
+    font-size: 60px;
+    font-weight: 900;
+    line-height: 60px;
+    margin: 0;
+    text-align: center;
+}
+
+.promo .promo_subheader {
+    color: #ffffff;
+    font-size: 36px;
+    text-transform: uppercase;
+    /* font-family: "Roboto - Bold"; */
+    font-weight: 700;
+    line-height: 36px;
+    margin: 0;
+    margin-top: 22px;
+    text-align: center;
+}
+
+.promo .promo_descr {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-top: 23px;
+    text-align: center;
+}
+
+.promo .promo_btn {
+    display: block;
+    margin: 118px auto 0 auto;
+    width: 259px;
+    height: 63px;
+    box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.12);
+    border:none;/* border: 3px solid rgba(0, 0, 0, 0.07); - как было*/
+    border-radius: 4px;
+    background-image: linear-gradient(to top, #1eacc7 0%, #4ce2ff 100%);
+    /* style for button text: */
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.21);
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.reason {   
+    padding: 71px 0 65px 0;
+}
+
+.lable {
+    margin: 0 auto;
+    width: 112px;
+    height: 24px;
+    padding: 5px 12px ;
+    background-color: #000000;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 300;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.title {
+    margin-bottom: 0;
+    margin-top: 38px;
+    color: #222222;
+    font-size: 38px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.reason .reason_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 35px;
+}
+.reason .reason_wrapper .reason_round {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right:26px;
+    width: 113px;
+    height: 113px;
+    background-color: #1eacc7;
+    border-radius: 100%;
+}
+
+.reason .reason_descr {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: flex-start; */
+    max-width: 341px;
+    color: #202020;
+    font-size: 15px;
+    line-height: 21px;
+    /* font-family: "Roboto Light"; */
+    font-weight: 300;
+}
+
+.reason .reason_descr span {
+    color: #1eacc7;
+    /* font-family: "Roboto - Regular"; */
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.uber_app {
+    min-height: 864px;
+    padding: 48px 0 80px 0;
+    background: url('../img/mobile_app/bg_mobile_app.png') center center/cover no-repeat;
+    background-color: #1eacc7;
+}
+
+.uber_app .title {
+    display: block;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 38px;
+    text-align: center;
+    color: #222222;
+}
+
+.uber_app .subtitle {
+    display: block;
+    margin-top: 19px;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 25.5px;
+    text-align: center;
+    color: #222222;
+}
+
+.uber_app .row {
+    margin-top: 32px;
+}
+
+.uber_app .uber_app_wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 320px;
+    height: 280px;
+    margin: 0 auto;
+    margin-bottom: 19px;
+    padding-top: 92px;
+}
+
+.uber_app_wrapper1 {
+    background: url(../img/mobile_app/img_1.png)
+}
+
+.uber_app_wrapper2 {
+    background: url(../img/mobile_app/img_2.png)
+}
+
+.uber_app_wrapper3 {
+    background: url(../img/mobile_app/img_3.png)
+}
+
+.uber_app_wrapper4 {
+    background: url(../img/mobile_app/img_4.png)
+}
+
+.uber_app_wrapper5 {
+    background: url(../img/mobile_app/img_5.png)
+}
+
+.uber_app_wrapper6 {
+    background: url(../img/mobile_app/img_6.png)
+}
+
+.uber_app_wrapper7 {
+    background: url(../img/mobile_app/img_7.png)
+}
+
+.uber_app_wrapper8 {
+    background: url(../img/mobile_app/img_8.png)
+}
+
+.uber_app_descr {
+    font-size: 24px;
+    font-weight: 400;
+    /* line-height: 1.29; */
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.uber_app .uber_app_plus {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    background: url(../icons/ico_plus.png);
+    cursor: pointer;
+}
+
+.choice {
+    position: relative;
+    background: url(../img/mobile_app/bg_mobile_app.png);
+    text-align: center;
+    padding: 56px 0 138px 0;
+}
+
+.choice .black {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 499px;
+    background-color: #070716; 
+    z-index: 1;
+}
+
+.choice .lable_white {
+    position: relative;
+    background-color: #fff;
+    color: #000;
+    z-index: 2;
+    text-transform: uppercase;
+}
+
+.choice .title_white {
+    position: relative;
+    margin: 0;
+    font-size: 11px;
+    font-weight: 300;
+    /* line-height: 6.18; */
+    text-align: center;
+    color: #070716;
+    z-index: 2;
+}
+
+.choice .choice_title {
+    position: relative;
+    margin-top: 32px;
+    margin-bottom: 0;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 48px;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+    z-index: 2;
+}
+
+.choice .choice_subtitle {
+    position: relative;
+    margin-top: 19px;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+    color: #ffffff;
+    z-index: 2;
+}
+.choice img {
+    position: relative;
+    margin-top: 56px;
+    z-index: 2;
+}
+
+.choice .choice_descr {
+    margin-top: 4px;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.41;
+    text-align: center;
+    color: #222222;
+}
+
+.require {
+    padding: 68px 0 84px 0;
+}
+
+.require .title {
+    margin-top: 33px;
+    font-size: 38px;
+    font-weight: 700;
+    font-stretch: normal;
+    line-height: 30px;
+    text-align: center;
+    color: #222222;
+}
+
+.require .require_block {
+    margin: 33px 0 33px 0;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 36px;
+    text-align: left;
+    color: #222222;
+}
+
+.require .require_block_red {
+    margin-top: 29px;
+}
+
+.require .require_title {
+    font-size: 22px;
+    font-weight: 400;
+    color: #1ca8c3;
+}
+
+.require .require_title_red {
+    font-size: 22px;
+    font-weight: normal;
+    color: #ff5656;
+}
+
+.require li {
+    list-style: none; /* Убираем исходные маркеры */
+    background: url(../icons/mark_blue.png) no-repeat 0 10px; /* Параметры фона */
+    padding-left: 36px; /* Смещаем текст вправо */
+}
+
+.require .require_block_red li {
+    list-style: none; /* Убираем исходные маркеры */
+    background: url(../icons/mark_red.png) no-repeat 0 10px; /* Параметры фона */
+    padding-left: 36px; /* Смещаем текст вправо */
+}
+
+.world  {
+    position: relative;
+    padding: 49px 0;
+    min-height: 717px;
+    background: url(../img/bg_world.png) center center/cover no-repeat;
+    text-align: center;
+}
+
+.world .lable_white {
+    margin: 0 auto;
+    width: 76px;
+    height: 24px;
+    background-color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.world .title {
+    margin-top: 32px;    
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 30px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.world .subtitle {
+    margin-top: 20px;
+    font-size: 17px;
+    font-weight: normal;
+    line-height: 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.world .world_link {
+    position: absolute;
+    left: 50%;
+    bottom:49px;
+    transform: translateX(-50%);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 4.53;
+    text-align: center;
+    color: #1fbad6;
+    text-transform: uppercase;
+}
+
+.world a:hover {
+    text-decoration: none; /* Убираем подчёркивание */
+    color: white; /* Цвет ссылки */ 
+    background:transparent ; /* Цвет фона */
+}
+
+footer {
+    min-height: 186px;
+    padding: 14px 0 30px 0;
+}
+footer .footer_wrapper {
+    /* padding: 33px 0 39px 0; */
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+footer .footer_wrapper>div {
+    width: 33%;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+/* выравнивание в flex блоке .footer_wrapper дочернего контейнера div с выбором № позиции div */
+.footer_wrapper>div:nth-child(1) {
+    justify-content: flex-start;
+    margin-right: 15px;
+}
+.footer_wrapper>div:nth-child(2) {
+    justify-content: center;
+    margin-right: 15px;
+}
+.footer_wrapper>div:nth-child(3) {
+    justify-content: flex-end;
+}
+
+footer .divider_up {
+    width: 299px;
+    height: 4px;
+    background-color: #1fbad6;
+    margin: 0 auto; /* от перемены мест margin: 0 auto и margin-top результат меняется */
+}
+
+footer .footer_social {
+    margin-top: 33px; 
+    margin-left: 62px;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    width: 160px;
+    flex-wrap: wrap;
+}
+
+footer .footer_social_item { 
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    
+    width: 32px;
+    height: 32px;
+    background-color: #070716;
+    border-radius: 100%;   
+}
+
+footer .footer_nav {
+    /* width: 100%; */
+    width: 390px;
+    margin-top: 33px; 
+    text-transform: uppercase;
+    font-weight: 300;
+    text-align: center;
+}
+
+
+footer .footer_nav_main {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+footer .footer_nav_main a {
+    font-size: 15px;
+    color: #070716;
+}
+
+footer .footer_nav_sub {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+footer .footer_nav_sub> a {
+    font-size: 11px;
+    color: #999999;
+}
+
+footer .footer_links_lang {
+    font-size: 11px;
+    font-weight: 400;
+    /* line-height: 6.18; */
+    text-align: center;
+    color: #1fbad6;
+}
+footer .footer_store {
+    margin-top: 33px; 
+    margin-right: 62px;
+}
+
+
+footer .divider_down {
+    margin-top: 31px;
+    /* width: 100%;*/
+    min-width: 1948px;
+    height: 8px;
+    background-color: #070716;
+}
